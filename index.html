@@ -13,11 +13,10 @@
 				<div class="header__menu">
 					<nav>
 						<ul class="header__menu-list">
-							<li><a href="#">Home</a></li>
+							<li class="active"><a href="#">Home</a></li>
 							<li>
-								<a href="#">
-									Courses<img src="img/arrow.svg" alt="#" />
-								</a>
+								<span> Courses </span>
+								<img src="img/arrow.svg" alt="#" />
 							</li>
 							<li><a href="#">About </a></li>
 							<li><a href="#">Contact us</a></li>
@@ -31,10 +30,17 @@
 			<div class="container">
 				<section class="section hero">
 					<div class="hero__left">
-						<p class="hero__left-title">Welcome to</p>
-						<p class="hero__left-title">Dickens Executive</p>
-						<p class="hero__left-title">Coaching Academy</p>
-						<p>Your resource of choice for coaching education</p>
+						<h1>
+							<span class="hero__left-title">Welcome to</span>
+							<span class="hero__left-title">
+								Dickens Executive
+							</span>
+							<span class="hero__left-title">
+								Coaching Academy
+							</span>
+						</h1>
+
+						<h2>Your resource of choice for coaching education</h2>
 						<button class="hero__left-button">
 							Explore Courses
 						</button>
@@ -160,33 +166,35 @@
 							<p class="courses__block-info-title">
 								THE THREE PRIMARY COACHING PROGRAM MODELS:
 							</p>
-							<div class="courses__block-info-points">
+							<li class="courses__block-info-points">
 								<p class="courses__block-info-subtitle">
 									Level 1 (ACC Track) Experiential Executive
 									Coaching Program
 								</p>
-								<div class="courses__block-info-point">
-									<img src="/img/check.svg" alt="#" />
-									<p>
-										In-depth exploration of coaching
-										foundations
-									</p>
-								</div>
-								<div class="courses__block-info-point">
-									<img src="/img/check.svg" alt="#" />
-									<p>
-										Mastery in effective communication
-										strategies
-									</p>
-								</div>
-								<div class="courses__block-info-point">
-									<img src="/img/check.svg" alt="#" />
-									<p>
-										Proficiency in navigating ICF Core
-										Competencies
-									</p>
-								</div>
-							</div>
+								<ul>
+									<li class="courses__block-info-point">
+										<img src="/img/check.svg" alt="#" />
+										<p>
+											In-depth exploration of coaching
+											foundations
+										</p>
+									</li>
+									<li class="courses__block-info-point">
+										<img src="/img/check.svg" alt="#" />
+										<p>
+											Mastery in effective communication
+											strategies
+										</p>
+									</li>
+									<li class="courses__block-info-point">
+										<img src="/img/check.svg" alt="#" />
+										<p>
+											Proficiency in navigating ICF Core
+											Competencies
+										</p>
+									</li>
+								</ul>
+							</li>
 							<div class="courses__block-info-points">
 								<p class="courses__block-info-subtitle">
 									Level 1 (ACC Track) Experiential Executive
@@ -609,13 +617,13 @@
 								<input
 									type="text"
 									name="name"
-									id="name"
+									id="name_faq"
 									placeholder="Name"
 								/>
 								<input
 									type="email"
 									name="email"
-									id="email"
+									id="email_faq"
 									placeholder="Email"
 								/>
 								<textarea

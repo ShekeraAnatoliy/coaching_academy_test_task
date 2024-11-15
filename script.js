@@ -3,8 +3,25 @@ const nextBtn = document.querySelector('.testimonials__content-slider-next');
 const prevBtn = document.querySelector('.testimonials__content-slider-prev');
 const dots = document.querySelector('.testimonials__content-slider-dots');
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
 	const faqBlocks = document.querySelectorAll('.faq__content-info-block');
+
+	const toggleBlock = (block, toggleIcon) => {
+		const isActive = block.classList.toggle('active');
+		toggleIcon.src = isActive ? '/img/minus.svg' : '/img/plus.svg';
+		toggleIcon.alt = isActive ? '-' : '+';
+	};
+
+	const closeOtherBlocks = (activeBlock) => {
+		faqBlocks.forEach((block) => {
+			if (block !== activeBlock) {
+				block.classList.remove('active');
+				const toggleIcon = block.querySelector('.toggle-icon img');
+				toggleIcon.src = '/img/plus.svg';
+				toggleIcon.alt = '+';
+			}
+		});
+	};
 
 	faqBlocks.forEach((block) => {
 		const titleBlock = block.querySelector(
@@ -12,20 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		);
 		const toggleIcon = block.querySelector('.toggle-icon img');
 
-		titleBlock.addEventListener('click', function () {
-			faqBlocks.forEach((otherBlock) => {
-				if (otherBlock !== block) {
-					otherBlock.classList.remove('active');
-					otherBlock.querySelector('.toggle-icon img').src =
-						'/img/plus.svg';
-					otherBlock.querySelector('.toggle-icon img').alt = '+';
-				}
-			});
-
-			const isActive = block.classList.toggle('active');
-
-			toggleIcon.src = isActive ? '/img/minus.svg' : '/img/plus.svg';
-			toggleIcon.alt = isActive ? '-' : '+';
+		titleBlock.addEventListener('click', () => {
+			closeOtherBlocks(block);
+			toggleBlock(block, toggleIcon);
 		});
 	});
 });
